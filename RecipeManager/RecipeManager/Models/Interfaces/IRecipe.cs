@@ -8,10 +8,10 @@ namespace RecipeManager.Models.Interfaces
     public interface IRecipe
     {
         Task<IEnumerable<Recipe>> GetRecipes();
-        Task<Recipe> GetRecipeById();
-        Task CreateRecipe();
+        Task<Recipe> GetRecipeById(int id);
+        Task<Recipe> CreateRecipe(Recipe recipe);
         Task DeleteRecipeById(int id);
-        Task UpdateRecipe(Recipe recipe);
+        Task<Recipe> UpdateRecipe(Recipe recipe);
 
     }
 }
