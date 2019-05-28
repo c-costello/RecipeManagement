@@ -8,6 +8,6 @@ namespace RecipeManager.Models
     public class SavedRecipes
     {
         public string User { get; set; }
-        public IEnumerable<Recipe> Recipes { get; set; }
+        public int RecipeID { get; set; }
     }
 }
