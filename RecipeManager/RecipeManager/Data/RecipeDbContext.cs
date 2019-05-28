@@ -13,6 +13,11 @@ namespace RecipeManager.Data
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Instruction>().HasKey(ce => new { ce.RecipeID, ce.StepNumber });
+            modelBuilder.Entity<SavedRecipes>().HasKey(ce => new { ce.RecipeID, ce.User });
+        }
 
         public DbSet<SavedRecipes> SavedRecipes { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
