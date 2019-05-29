@@ -6,7 +6,19 @@
 
 <div id="login">
     <h1>Login</h1>
-    <form>
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+        <p>
+            <label asp-for="Username"></label>
+            <input asp-for="Username" />
+            <span asp-validation-for="Username"></span>
+        </p>
+        <p>
+            <label asp-for="Password"></label>
+            <input asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </p>
+        <button type="submit">LOGIN</button>
 
     </form>
 </div>
