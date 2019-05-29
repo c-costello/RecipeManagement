@@ -7,7 +7,9 @@ namespace RecipeManager.Models.Interfaces
 {
     interface ISavedRecipe
     {
-        Task<SavedRecipes> CreateSavedRecipes(int recipeID, string user);
+        Task<SavedRecipe> CreateSavedRecipes(int recipeID, string user);
+        Task<IEnumerable<SavedRecipe>> GetSavedRecipes(string user);
+        Task<SavedRecipe> GetSavedRecipe(int recipeID, string user);
         Task DeleteRecipe(int recipeID, string user);
     }
 }
