@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RecipeManager.Data;
+using RecipeManager.Models.Interfaces;
+using RecipeManager.Models.Services;
 
 namespace RecipeManager
 {
@@ -30,6 +32,12 @@ namespace RecipeManager
 
             services.AddDbContext<RecipeDbContext>(options =>
             options.UseSqlServer(Configuration["ConnectionStrings:RecipeLocalConnection"]));
+
+            services.AddScoped<IRecipe, RecipeService>();
+            services.AddScoped<IIngredient, IngredientService>();
+            services.AddScoped<IInstruction, InstructionService>();
+            services.AddScoped<IComment, CommentService>();
+            services.AddScoped<ISavedRecipe, SavedRecipeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

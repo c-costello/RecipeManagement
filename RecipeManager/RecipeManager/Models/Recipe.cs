@@ -13,7 +13,6 @@ namespace RecipeManager.Models
         public int ServingSize { get; set; }
         public string CookTime { get; set; }
         public string Author { get; set; }
-        public IEnumerable<string> ImgUrls { get; set; }
         public string Notes { get; set; }
         public IEnumerable<Instruction> Instructions { get; set; }
         public IEnumerable<Ingredient> Ingredients { get; set; }
