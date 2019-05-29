@@ -1,7 +1,18 @@
-﻿
+﻿@model  IEnumerable<RecipeManager.Models.Recipe>
+@using RecipeManager.Models
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Recipes</h2>
+@foreach (Recipe recipe in @Model)
+{
+    <div>
+        <h4 class="title"> @recipe.Title </h4>
+        <p> @recipe.Description</p>
+        <p> @recipe.Author</p>
+        <button class="view-details"> View Details </button>
+        <button class="save-recipe"> Save Recipe </button>
+    </div>
+}
 

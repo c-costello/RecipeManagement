@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RecipeManager.Models.Interfaces
 {
-    interface IInstruction
+    public interface IInstruction
     {
         Task<IEnumerable<Instruction>> GetInstructions(int recipeID);
         Task<Instruction> GetInstruction(int recipeID, int stepNumber);
