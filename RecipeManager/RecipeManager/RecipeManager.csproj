@@ -15,6 +15,9 @@
   <ItemGroup>
     <Compile Include="Migrations\20190528234007_init.cs" />
     <Compile Include="Migrations\20190528234007_init.Designer.cs" />
+    <Compile Include="Migrations\ApplicationDb\20190529025749_init.cs" />
+    <Compile Include="Migrations\ApplicationDb\20190529025749_init.Designer.cs" />
+    <Compile Include="Migrations\ApplicationDb\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Migrations\RecipeDbContextModelSnapshot.cs" />
   </ItemGroup>
 

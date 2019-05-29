@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using RecipeManager.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
