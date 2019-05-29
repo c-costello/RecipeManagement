@@ -36,5 +36,8 @@ namespace RecipeManager.Controllers.Account
             }
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Register() => View();
     }
 }
