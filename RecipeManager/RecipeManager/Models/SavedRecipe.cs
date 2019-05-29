@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RecipeManager.Models
 {
-    public class SavedRecipes
+    public class SavedRecipe
     {
         public string User { get; set; }
         public int RecipeID { get; set; }

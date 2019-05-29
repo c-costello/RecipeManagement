@@ -6,7 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Services\" />
+    <Compile Remove="Migrations\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Migrations\20190528234007_init.cs" />
+    <Compile Include="Migrations\20190528234007_init.Designer.cs" />
+    <Compile Include="Migrations\RecipeDbContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
