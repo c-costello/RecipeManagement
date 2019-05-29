@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RecipeManager.Models;
+using RecipeManager.Models.ViewModels;
 
 namespace RecipeManager.Controllers.Account
 {
@@ -26,8 +27,16 @@ namespace RecipeManager.Controllers.Account
         }
 
         [HttpPost]
-        public IActionResult Login(LoginViewModel lvm)
+        public async Task<IActionResult> Login(LoginViewModel lvm)
         {
+            if (ModelState.IsValid)
+            {
+                var result = await _SignInManager.PasswordSignInAsync(lvm.Username, lvm.Password, false, false);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
             return View();
         }
     }
