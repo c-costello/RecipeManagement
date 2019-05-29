@@ -21,10 +21,7 @@ namespace RecipeManager.Controllers.Account
         }
 
         [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
+        public IActionResult Login() => View();
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel lvm)
@@ -36,6 +33,33 @@ namespace RecipeManager.Controllers.Account
                 {
                     return RedirectToAction("Index", "Home");
                 }
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Register() => View();
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel rvm)
+        {
+            if (ModelState.IsValid)
+            {
+                ApplicationUser applicationUser = new ApplicationUser()
+                {
+                    Email = rvm.Email,
+                    UserName = rvm.Username,
+                    FirstName = rvm.FirstName,
+                    LastName = rvm.LastName
+                };
+                var result = await _UserManager.CreateAsync(applicationUser, rvm.Password);
+                if (result.Succeeded)
+                {
+                    await _SignInManager.PasswordSignInAsync(rvm.Username, rvm.Password, false, false);
+                    return RedirectToAction("Home", "Index");
+
+                }
+                return View();
             }
             return View();
         }
