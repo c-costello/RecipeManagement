@@ -30,6 +30,7 @@ namespace RecipeManager
         {
             services.AddMvc();
 
+
             services.AddDbContext<RecipeDbContext>(options =>
             options.UseSqlServer(Configuration["ConnectionStrings:RecipeLocalConnection"]));
 
