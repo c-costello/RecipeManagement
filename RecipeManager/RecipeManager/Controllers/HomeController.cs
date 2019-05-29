@@ -8,7 +8,7 @@ using RecipeManager.Models.Interfaces;
 
 namespace RecipeManager.Controllers
 {
-    public class RecipeController : Controller
+    public class HomeController : Controller
     {
         private readonly IRecipe _Recipe;
         private readonly IInstruction _Instruction;
@@ -16,7 +16,7 @@ namespace RecipeManager.Controllers
         private readonly IComment _Comment;
         private readonly ISavedRecipe _SavedRecipe;
 
-        public RecipeController(IRecipe recipe, IInstruction instructions, IIngredient ingredient, IComment comment, ISavedRecipe savedRecipe)
+        public HomeController(IRecipe recipe, IInstruction instructions, IIngredient ingredient, IComment comment, ISavedRecipe savedRecipe)
         {
             _Recipe = recipe;
             _Instruction = instructions;
