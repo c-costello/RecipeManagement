@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RecipeManager.Models.Interfaces
 {
-    interface ISavedRecipe
+    public interface ISavedRecipe
     {
         Task<SavedRecipe> CreateSavedRecipes(int recipeID, string user);
         Task<IEnumerable<SavedRecipe>> GetSavedRecipes(string user);
