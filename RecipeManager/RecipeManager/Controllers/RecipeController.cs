@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using RecipeManager.Models;
 using RecipeManager.Models.Interfaces;
 
 namespace RecipeManager.Controllers
@@ -23,9 +24,16 @@ namespace RecipeManager.Controllers
             _Comment = comment;
             _SavedRecipe = savedRecipe;
         }
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            IEnumerable<Recipe> recipes = await _Recipe.GetRecipes();
+            foreach (Recipe recipe in recipes)
+            {
+                recipe.Ingredients = await _Ingredient.GetIngredients(recipe.ID);
+                recipe.Instructions = await _Instruction.GetInstructions(recipe.ID);
+            }
+            return View(recipes);
         }
     }
 }
