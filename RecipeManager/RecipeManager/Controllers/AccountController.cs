@@ -21,10 +21,7 @@ namespace RecipeManager.Controllers.Account
         }
 
         [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
+        public IActionResult Login() => View();
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel lvm)
