@@ -9,13 +9,31 @@
 
 
 <form method="post">
+    <label asp-for="@Model.Title"></label>
+    <input asp-for="@Model.Title" />
+    <label asp-for="@Model.ServingSize"></label>
+    <input asp-for="@Model.ServingSize" />
+    <label asp-for="@Model.CookTime"></label>
+    <input asp-for="@Model.CookTime" />
+    <label asp-for="@Model.Description"></label>
+    <input asp-for="@Model.Description" />
+    <label asp-for="@Model.Notes" ></label>
+    <input asp-for="@Model.Notes" />
     <div class="ingredients">
+        <p>Ingredients</p>
+        <lable>Name</lable>
         <input asp-for="@Model.Ingredients[0].Name" />
+        <label>Quantity</label>
         <input asp-for="@Model.Ingredients[0].Quantity" />
+        <label>Notes</label>
+        <input asp-for="@Model.Ingredients[0].Notes" />
     </div>
     <p class="ingredient-adder">Plus Plus</p>
     <div class="instructions">
+        <p> Instructions</p>
+        <label>Step Number</label>
         <input type="number" asp-for="@Model.Instructions[0].StepNumber" value="1" />
+        <label>Instruction</label>
         <input asp-for="@Model.Instructions[0].Detail" />
     </div>
     <p class="instruction-adder">Plus Plus</p>
