@@ -14,5 +14,10 @@
         <input asp-for="@Model.Ingredients[0].Quantity" />
     </div>
     <p class="ingredient-adder">Plus Plus</p>
+    <div class="instructions">
+        <input type="number" asp-for="@Model.Instructions[0].StepNumber" value="1" />
+        <input asp-for="@Model.Instructions[0].Detail" />
+    </div>
+    <p class="instruction-adder">Plus Plus</p>
     <button type="submit">Submit</button>
 </form>
