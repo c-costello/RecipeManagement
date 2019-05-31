@@ -37,10 +37,10 @@ namespace RecipeManager.Models.Services
             
         }
 
-        public async Task<IEnumerable<Ingredient>> GetIngredients(int recipeID)
+        public async Task<List<Ingredient>> GetIngredients(int recipeID)
         {
-            IEnumerable<Ingredient> ingredientsRaw = await _context.Ingredients.ToListAsync();
-            IEnumerable<Ingredient> ingredients =  ingredientsRaw.Where(r => r.RecipeID == recipeID);
+            List<Ingredient> ingredientsRaw = await _context.Ingredients.ToListAsync();
+            List<Ingredient> ingredients =  ingredientsRaw.FindAll(r => r.RecipeID == recipeID);
             return ingredients;
         }
 

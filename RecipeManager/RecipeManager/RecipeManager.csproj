@@ -6,23 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\**" />
-    <Content Remove="Migrations\**" />
-    <EmbeddedResource Remove="Migrations\**" />
-    <None Remove="Migrations\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Remove="Controllers\RecipesController.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Migrations\20190528234007_init.cs" />
-    <Compile Include="Migrations\20190528234007_init.Designer.cs" />
-    <Compile Include="Migrations\ApplicationDb\20190529025749_init.cs" />
-    <Compile Include="Migrations\ApplicationDb\20190529025749_init.Designer.cs" />
-    <Compile Include="Migrations\ApplicationDb\ApplicationDbContextModelSnapshot.cs" />
-    <Compile Include="Migrations\RecipeDbContextModelSnapshot.cs" />
   </ItemGroup>
 
   <ItemGroup>
