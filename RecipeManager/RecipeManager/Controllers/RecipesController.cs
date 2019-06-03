@@ -28,7 +28,21 @@ namespace RecipeManager.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(Recipe recipe)
         {
-            var Instructions = recipe.Instructions;
+            var ingredients = recipe.Ingredients;
+            var instructions = recipe.Instructions;
+            recipe.Instructions = null;
+            recipe.Ingredients = null;
+            await _Recipe.CreateRecipe(recipe);
+            foreach (var ingredient in ingredients)
+            {
+                ingredient.RecipeID = recipe.ID;
+                await _Ingredient.CreateIngredient(ingredient);
+            }
+            foreach (var instruction in instructions)
+            {
+                instruction.RecipeID = recipe.ID;
+                await _Instruction.CreateInstruction(instruction);
+            }
             return RedirectToAction("Index", "Home");
         }
     }
