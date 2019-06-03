@@ -28,17 +28,17 @@
             </tr>
         </thead>
         <tbody class="ingredients">
-            @foreach (Ingredient ingredient in Model.Ingredients)
+            @for (int i = 0; i < Model.Ingredients.Count(); i++)
             {
                 <tr>
                     <td>
-                        <input asp-for="@ingredient.Name" />
+                        <input asp-for="@Model.Ingredients[i].Name" />
                     </td>
                     <td>
-                        <input asp-for="@ingredient.Quantity" />
+                        <input asp-for="@Model.Ingredients[i].Quantity" />
                     </td>
                     <td>
-                        <input asp-for="@ingredient.Notes" />
+                        <input asp-for="@Model.Ingredients[i].Notes" />
                     </td>
                 </tr>
             }
@@ -54,14 +54,14 @@
         </thead>
         <tbody class="instructions">
             
-                @foreach (Instruction instruction in Model.Instructions)
+                @for(int i = 0; i < Model.Instructions.Count(); i++)
                 {
                     <tr>
                         <td>
-                            <input type="number" asp-for="@instruction.StepNumber" value="@instruction.StepNumber" />
+                            <input type="number" asp-for="@Model.Instructions[i].StepNumber" value="@Model.Instructions[i].StepNumber" />
                         </td>
                         <td>
-                            <input asp-for="@instruction.Detail" />
+                            <input asp-for="@Model.Instructions[i].Detail" />
                         </td>
                     </tr>
                 }
