@@ -61,31 +61,26 @@ namespace RecipeManager.Controllers
             var instructions = recipe.Instructions;
             recipe.Instructions = null;
             recipe.Ingredients = null;
-            await _Recipe.UpdateRecipe(recipe);
-            foreach (var ingredient in ingredients)
+            recipe = await _Recipe.UpdateRecipe(recipe);
+            List<Ingredient> deleteIngredients = await _Ingredient.GetIngredients(recipe.ID);
+            List<Instruction> deleteInstruction = await _Instruction.GetInstructions(recipe.ID);
+            foreach(Ingredient ingredient in deleteIngredients)
             {
-               
-                ingredient.RecipeID = recipe.ID;
-                if (await _Ingredient.GetIngredient(ingredient.ID) != null)
-                {
-                    await _Ingredient.UpdateIngredient(ingredient);
-                }
-                else
-                {
-                    await _Ingredient.CreateIngredient(ingredient);
-                }
+                await _Ingredient.DeleteIngredient(ingredient);
             }
-            foreach (var instruction in instructions)
+            foreach(Instruction instruction in deleteInstruction)
+            {
+                await _Instruction.DeleteInstruction(instruction);
+            }
+            foreach(Ingredient ingredient in ingredients)
+            {
+                ingredient.RecipeID = recipe.ID;
+                await _Ingredient.CreateIngredient(ingredient);
+            }
+            foreach(Instruction instruction in instructions)
             {
                 instruction.RecipeID = recipe.ID;
-                if (await _Instruction.GetInstruction(recipe.ID, instruction.StepNumber) != null)
-                {
-                    await _Instruction.UpdateInstruction(instruction);
-                }
-                else
-                {
-                    await _Instruction.CreateInstruction(instruction);
-                }
+                await _Instruction.CreateInstruction(instruction);
             }
             return RedirectToAction("Index", "Home");
         }

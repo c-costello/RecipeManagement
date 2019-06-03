@@ -3,7 +3,7 @@ var instCounter = parseInt($('.final-inst-count').text())-1;
 $('.ingredient-adder').on('click', () => {
     ingCounter++;
     console.log(ingCounter);
-    $(`<tr class='test'> \n <input type="text" id="Ingredients_${ingCounter}__Name" name="Ingredients[${ingCounter}].Name" value=""> \n </td>\n <td> <input type = "text" id = "Ingredients_${ingCounter}__Quantity" name = "Ingredients[${ingCounter}].Quantity" value = "" > \n </td> \n <td> \n <input type="text" id="Ingredients_${ingCounter}__Notes" name="Ingredients[${ingCounter}].Notes" value=""> \n </td> \n </tr>`).appendTo('.ingredients ');
+    $(`<tr class='test'> \n <td> \n <input type="text" id="Ingredients_${ingCounter}__Name" name="Ingredients[${ingCounter}].Name" value=""> \n </td>\n <td> <input type = "text" id = "Ingredients_${ingCounter}__Quantity" name = "Ingredients[${ingCounter}].Quantity" value = "" > \n </td> \n <td> \n <input type="text" id="Ingredients_${ingCounter}__Notes" name="Ingredients[${ingCounter}].Notes" value=""> \n </td> \n </tr>`).appendTo('.ingredients ');
 
 })
 

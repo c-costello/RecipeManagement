@@ -11,6 +11,6 @@ namespace RecipeManager.Models.Interfaces
         Task<Instruction> GetInstruction(int recipeID, int stepNumber);
         Task<Instruction> CreateInstruction(Instruction instruction);
         Task<Instruction> UpdateInstruction(Instruction instruction);
-        Task DeleteInstructionByID(int recipeID, int stepNumber);
+        Task DeleteInstruction(Instruction instruction);
     }
 }
