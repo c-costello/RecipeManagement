@@ -42,13 +42,24 @@
         </tbody>
     </table>
     <p class="ingredient-adder">Plus Plus</p>
-    <div class="instructions">
-        <p> Instructions</p>
-        <label>Step Number</label>
-        <input type="number" asp-for="@Model.Instructions[0].StepNumber" value="1" />
-        <label>Instruction</label>
-        <input asp-for="@Model.Instructions[0].Detail" />
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th> Step Number</th>
+                <th> Instruction</th>
+            </tr>
+        </thead>
+        <tbody class="instructions">
+            <tr>
+                <td>
+                    <input type="number" asp-for="@Model.Instructions[0].StepNumber" value="1" />
+                </td>
+                <td>
+                    <input asp-for="@Model.Instructions[0].Detail" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <p class="instruction-adder">Plus Plus</p>
     <button type="submit">Submit</button>
 </form>

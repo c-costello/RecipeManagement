@@ -10,5 +10,7 @@ $('.ingredient-adder').on('click', () => {
 $('.instruction-adder').on('click', () => {
     instCounter++;
     console.log(instCounter);
-    $(`<input type = "text" id = "Instructions_${instCounter}__Detail" name = "Instructions[${instCounter}].Detail" value = "" >\n <input type="text" id="Instructions_${instCounter}__StepNumber" name="Instructions[${instCounter}].StepNumber" value="${instCounter + 1}">`).appendTo('.instructions')
+    $(`<tr>\n<td>\n <input type="text" id="Instructions_${instCounter}__StepNumber" name="Instructions[${instCounter}].StepNumber" value = "${instCounter + 1}" >\n</td>\n<td> \n <input type = "text" id = "Instructions_${instCounter}__Detail" name = "Instructions[${instCounter}].Detail" value = "" >\n</td>\n</tr>`).appendTo('.instructions')
 })
+
+   
