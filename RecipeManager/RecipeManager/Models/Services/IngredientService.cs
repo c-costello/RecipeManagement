@@ -23,9 +23,8 @@ namespace RecipeManager.Models.Services
             return ingredient;
         }
 
-        public async Task DeleteIngredient(int id)
+        public async Task DeleteIngredient(Ingredient ingredient)
         {
-            Ingredient ingredient = await GetIngredient(id);
             _context.Ingredients.Remove(ingredient);
             await _context.SaveChangesAsync();
         }

@@ -23,9 +23,8 @@ namespace RecipeManager.Models.Services
             return instruction;
         }
 
-        public async Task DeleteInstructionByID(int recipeID, int stepNumber)
+        public async Task DeleteInstruction(Instruction instruction)
         {
-            Instruction instruction = await GetInstruction(recipeID, stepNumber);
             _context.Instructions.Remove(instruction);
             await _context.SaveChangesAsync();
         }

@@ -1,10 +1,13 @@
-﻿@model  RecipeManager.Models.Recipe
+﻿@model RecipeManager.Models.Recipe
+@using RecipeManager.Models
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Edit</h2>
+<span class="hidden final-inst-count">@Model.Instructions.Count()</span>
+<span class="hidden final-ing-count">@Model.Instructions.Count()</span>
 <form method="post">
     <label asp-for="@Model.Title"></label>
     <input asp-for="@Model.Title" />
@@ -25,17 +28,20 @@
             </tr>
         </thead>
         <tbody class="ingredients">
-            <tr>
-                <td>
-                    <input asp-for="@Model.Ingredients[0].Name" />
-                </td>
-                <td>
-                    <input asp-for="@Model.Ingredients[0].Quantity" />
-                </td>
-                <td>
-                    <input asp-for="@Model.Ingredients[0].Notes" />
-                </td>
-            </tr>
+            @for (int i = 0; i < Model.Ingredients.Count(); i++)
+            {
+                <tr>
+                    <td>
+                        <input asp-for="@Model.Ingredients[i].Name" />
+                    </td>
+                    <td>
+                        <input asp-for="@Model.Ingredients[i].Quantity" />
+                    </td>
+                    <td>
+                        <input asp-for="@Model.Ingredients[i].Notes" />
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
     <p class="ingredient-adder">Plus Plus</p>
@@ -47,14 +53,19 @@
             </tr>
         </thead>
         <tbody class="instructions">
-            <tr>
-                <td>
-                    <input type="number" asp-for="@Model.Instructions[0].StepNumber" value="1" />
-                </td>
-                <td>
-                    <input asp-for="@Model.Instructions[0].Detail" />
-                </td>
-            </tr>
+            
+                @for(int i = 0; i < Model.Instructions.Count(); i++)
+                {
+                    <tr>
+                        <td>
+                            <input type="number" asp-for="@Model.Instructions[i].StepNumber" value="@Model.Instructions[i].StepNumber" />
+                        </td>
+                        <td>
+                            <input asp-for="@Model.Instructions[i].Detail" />
+                        </td>
+                    </tr>
+                }
+
         </tbody>
     </table>
     <p class="instruction-adder">Plus Plus</p>
