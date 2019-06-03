@@ -1,4 +1,5 @@
-﻿
+﻿@model  RecipeManager.Models.Recipe
+@using RecipeManager.Models
 @{
     ViewData["Title"] = "Add";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +7,59 @@
 
 <h2>Add</h2>
 
+
+<form method="post">
+    <label asp-for="@Model.Title"></label>
+    <input asp-for="@Model.Title" />
+    <label asp-for="@Model.ServingSize"></label>
+    <input asp-for="@Model.ServingSize" />
+    <label asp-for="@Model.CookTime"></label>
+    <input asp-for="@Model.CookTime" />
+    <label asp-for="@Model.Description"></label>
+    <input asp-for="@Model.Description" />
+    <label asp-for="@Model.Notes" ></label>
+    <input asp-for="@Model.Notes" />
+    <table class="ingr-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody class="ingredients">
+            <tr>
+                <td>
+                    <input asp-for="@Model.Ingredients[0].Name" />
+                </td>
+                <td>
+                    <input asp-for="@Model.Ingredients[0].Quantity" />
+                </td>
+                <td>
+                    <input asp-for="@Model.Ingredients[0].Notes" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="ingredient-adder">Plus Plus</p>
+    <table>
+        <thead>
+            <tr>
+                <th> Step Number</th>
+                <th> Instruction</th>
+            </tr>
+        </thead>
+        <tbody class="instructions">
+            <tr>
+                <td>
+                    <input type="number" asp-for="@Model.Instructions[0].StepNumber" value="1" />
+                </td>
+                <td>
+                    <input asp-for="@Model.Instructions[0].Detail" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="instruction-adder">Plus Plus</p>
+    <button type="submit">Submit</button>
+</form>

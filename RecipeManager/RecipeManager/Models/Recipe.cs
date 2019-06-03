@@ -14,9 +14,9 @@ namespace RecipeManager.Models
         public string CookTime { get; set; }
         public string Author { get; set; }
         public string Notes { get; set; }
-        public IEnumerable<Instruction> Instructions { get; set; }
-        public IEnumerable<Ingredient> Ingredients { get; set; }
+        public List<Instruction> Instructions { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
 
-        public IEnumerable<Comment> Comments { get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }

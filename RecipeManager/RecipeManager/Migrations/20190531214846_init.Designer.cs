@@ -10,7 +10,7 @@ using RecipeManager.Data;
 namespace RecipeManager.Migrations
 {
     [DbContext(typeof(RecipeDbContext))]
-    [Migration("20190528234007_init")]
+    [Migration("20190531214846_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

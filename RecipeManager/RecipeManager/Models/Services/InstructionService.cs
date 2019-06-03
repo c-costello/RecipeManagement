@@ -32,14 +32,14 @@ namespace RecipeManager.Models.Services
 
         public async Task<Instruction> GetInstruction(int recipeID, int stepNumber)
         {
-            IEnumerable<Instruction> instructionsRaw = await _context.Instructions.ToListAsync();
+            List<Instruction> instructionsRaw = await _context.Instructions.ToListAsync();
             return instructionsRaw.FirstOrDefault(i => i.RecipeID == recipeID && i.StepNumber == stepNumber);
         }
 
-        public async Task<IEnumerable<Instruction>> GetInstructions(int recipeID)
+        public async Task<List<Instruction>> GetInstructions(int recipeID)
         {
-            IEnumerable<Instruction> instructionsRaw = await _context.Instructions.ToListAsync();
-            return instructionsRaw.Where(i => i.RecipeID == recipeID);
+            List<Instruction> instructionsRaw = await _context.Instructions.ToListAsync();
+            return instructionsRaw.FindAll(i => i.RecipeID == recipeID);
         }
 
         public async Task<Instruction> UpdateInstruction(Instruction instruction)
