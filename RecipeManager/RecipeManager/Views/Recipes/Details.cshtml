@@ -25,13 +25,13 @@
         {
             <tr>
                 <td>
-                    <input asp-for="@Model.Ingredients[i].Name" />
+                    @Model.Ingredients[i].Name
                 </td>
                 <td>
-                    <input asp-for="@Model.Ingredients[i].Quantity" />
+                    @Model.Ingredients[i].Quantity
                 </td>
                 <td>
-                    <input asp-for="@Model.Ingredients[i].Notes" />
+                    @Model.Ingredients[i].Notes
                 </td>
             </tr>
         }
@@ -51,10 +51,10 @@
         {
             <tr>
                 <td>
-                    <input type="number" asp-for="@Model.Instructions[i].StepNumber" value="@Model.Instructions[i].StepNumber" />
+                    @Model.Instructions[i].StepNumber
                 </td>
                 <td>
-                    <input asp-for="@Model.Instructions[i].Detail" />
+                    @Model.Instructions[i].Detail
                 </td>
             </tr>
         }
