@@ -54,5 +54,25 @@ namespace RecipeManager.Controllers
             recipe.Ingredients = await _Ingredient.GetIngredients(id);
             return View(recipe);
         }
+        [HttpPost]
+        public async Task<IActionResult> Edit(Recipe recipe)
+        {
+            var ingredients = recipe.Ingredients;
+            var instructions = recipe.Instructions;
+            recipe.Instructions = null;
+            recipe.Ingredients = null;
+            await _Recipe.UpdateRecipe(recipe);
+            foreach (var ingredient in ingredients)
+            {
+                ingredient.RecipeID = recipe.ID;
+                await _Ingredient.UpdateIngredient(ingredient);
+            }
+            foreach (var instruction in instructions)
+            {
+                instruction.RecipeID = recipe.ID;
+                await _Instruction.UpdateInstruction(instruction);
+            }
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
