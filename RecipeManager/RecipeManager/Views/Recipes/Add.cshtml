@@ -19,15 +19,28 @@
     <input asp-for="@Model.Description" />
     <label asp-for="@Model.Notes" ></label>
     <input asp-for="@Model.Notes" />
-    <div class="ingredients">
-        <p>Ingredients</p>
-        <lable>Name</lable>
-        <input asp-for="@Model.Ingredients[0].Name" />
-        <label>Quantity</label>
-        <input asp-for="@Model.Ingredients[0].Quantity" />
-        <label>Notes</label>
-        <input asp-for="@Model.Ingredients[0].Notes" />
-    </div>
+    <table class="ingr-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody class="ingredients">
+            <tr>
+                <td>
+                    <input asp-for="@Model.Ingredients[0].Name" />
+                </td>
+                <td>
+                    <input asp-for="@Model.Ingredients[0].Quantity" />
+                </td>
+                <td>
+                    <input asp-for="@Model.Ingredients[0].Notes" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <p class="ingredient-adder">Plus Plus</p>
     <div class="instructions">
         <p> Instructions</p>
