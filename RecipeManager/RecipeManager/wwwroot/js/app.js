@@ -1,5 +1,5 @@
-﻿var ingCounter = 0;
-var instCounter = 0;
+﻿var ingCounter = $('.final-ing-count').text()
+var instCounter = $('.final-inst-count').text()
 $('.ingredient-adder').on('click', () => {
     ingCounter++;
     console.log(ingCounter);

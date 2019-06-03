@@ -1,10 +1,13 @@
-﻿@model  RecipeManager.Models.Recipe
+﻿@model RecipeManager.Models.Recipe
+@using RecipeManager.Models
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Edit</h2>
+<span class="hidden final-inst-count">@Model.Instructions.Count()-1</span>
+<span class="hidden final-ing-count">@Model.Instructions.Count()-1</span>
 <form method="post">
     <label asp-for="@Model.Title"></label>
     <input asp-for="@Model.Title" />
@@ -47,14 +50,19 @@
             </tr>
         </thead>
         <tbody class="instructions">
-            <tr>
-                <td>
-                    <input type="number" asp-for="@Model.Instructions[0].StepNumber" value="1" />
-                </td>
-                <td>
-                    <input asp-for="@Model.Instructions[0].Detail" />
-                </td>
-            </tr>
+            
+                @foreach (Instruction instruction in Model.Instructions)
+                {
+                    <tr>
+                        <td>
+                            <input type="number" asp-for="@Model.Instructions[instruction.StepNumber-1].StepNumber" value="@Model.Instructions[instruction.StepNumber-1].StepNumber" />
+                        </td>
+                        <td>
+                            <input asp-for="@Model.Instructions[instruction.StepNumber-1].Detail" />
+                        </td>
+                    </tr>
+                }
+
         </tbody>
     </table>
     <p class="instruction-adder">Plus Plus</p>
