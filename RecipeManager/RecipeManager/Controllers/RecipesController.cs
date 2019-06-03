@@ -45,5 +45,14 @@ namespace RecipeManager.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            Recipe recipe = await _Recipe.GetRecipeById(id);
+            recipe.Instructions = await _Instruction.GetInstructions(id);
+            recipe.Ingredients = await _Ingredient.GetIngredients(id);
+            return View(recipe);
+        }
     }
 }
