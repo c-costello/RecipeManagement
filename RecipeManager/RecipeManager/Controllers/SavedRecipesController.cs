@@ -13,15 +13,26 @@ namespace RecipeManager.Controllers
     {
         private readonly ISavedRecipe _Context;
         private readonly UserManager<ApplicationUser> _UserManager;
+        private readonly IRecipe _RecipeContext;
 
-        public SavedRecipesController(ISavedRecipe savedRecipe, UserManager<ApplicationUser> userManager)
+        public SavedRecipesController(ISavedRecipe savedRecipe, UserManager<ApplicationUser> userManager, IRecipe recipe, IInstruction instruction, IIngredient ingredient)
         {
             _Context = savedRecipe;
             _UserManager = userManager;
+            _RecipeContext = recipe;
         }
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> ViewAll()
         {
-            return View();
+            List<Recipe> recipes = new List<Recipe>();
+            string user = User.Identity.Name;
+            IEnumerable<SavedRecipe> savedRecipes = await _Context.GetSavedRecipes(user);
+            foreach (SavedRecipe saved in savedRecipes)
+            {
+                Recipe recipe = await _RecipeContext.GetRecipeById(saved.RecipeID);
+                recipes.Add(recipe);
+            }
+            return View(recipes);
         }
     }
 }
