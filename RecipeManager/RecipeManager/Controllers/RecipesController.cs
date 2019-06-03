@@ -64,13 +64,28 @@ namespace RecipeManager.Controllers
             await _Recipe.UpdateRecipe(recipe);
             foreach (var ingredient in ingredients)
             {
+               
                 ingredient.RecipeID = recipe.ID;
-                await _Ingredient.UpdateIngredient(ingredient);
+                if (await _Ingredient.GetIngredient(ingredient.ID) != null)
+                {
+                    await _Ingredient.UpdateIngredient(ingredient);
+                }
+                else
+                {
+                    await _Ingredient.CreateIngredient(ingredient);
+                }
             }
             foreach (var instruction in instructions)
             {
                 instruction.RecipeID = recipe.ID;
-                await _Instruction.UpdateInstruction(instruction);
+                if (await _Instruction.GetInstruction(recipe.ID, instruction.StepNumber) != null)
+                {
+                    await _Instruction.UpdateInstruction(instruction);
+                }
+                else
+                {
+                    await _Instruction.CreateInstruction(instruction);
+                }
             }
             return RedirectToAction("Index", "Home");
         }
