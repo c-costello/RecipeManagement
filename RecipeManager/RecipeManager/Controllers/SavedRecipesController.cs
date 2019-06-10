@@ -34,5 +34,13 @@ namespace RecipeManager.Controllers
             }
             return View(recipes);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Save(int id)
+        {
+            string user = User.Identity.Name;
+            await _Context.CreateSavedRecipes(id, user);
+            return RedirectToAction("ViewAll");
+        }
     }
 }
