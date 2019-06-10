@@ -14,6 +14,7 @@ namespace RecipeManager.Models
         public string CookTime { get; set; }
         public string Author { get; set; }
         public string Notes { get; set; }
+        public bool IsSaved {get; set;}
         public List<Instruction> Instructions { get; set; }
         public List<Ingredient> Ingredients { get; set; }
 
