@@ -13,12 +13,14 @@ namespace RecipeManager.Controllers
         private readonly IIngredient _Ingredient;
         private readonly IInstruction _Instruction;
         private readonly IRecipe _Recipe;
+        private readonly ISavedRecipe _SavedRecipe;
 
-        public RecipesController(IIngredient ingredient, IInstruction instruction, IRecipe recipe)
+        public RecipesController(IIngredient ingredient, IInstruction instruction, IRecipe recipe, ISavedRecipe savedRecipe)
         {
             _Ingredient = ingredient;
             _Instruction = instruction;
             _Recipe = recipe;
+            _SavedRecipe = savedRecipe;
         }
         [HttpGet]
         public IActionResult Add()
@@ -87,9 +89,19 @@ namespace RecipeManager.Controllers
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
+            string user = User.Identity.Name;
             Recipe recipe = await _Recipe.GetRecipeById(id);
             recipe.Instructions = await _Instruction.GetInstructions(id);
             recipe.Ingredients = await _Ingredient.GetIngredients(id);
+            var saved = await _SavedRecipe.GetSavedRecipe(id, user);
+            if (saved != null)
+            {
+                recipe.IsSaved = true;
+            }
+            else
+            {
+                recipe.IsSaved = false;
+            }
             return View(recipe);
         }
     }
