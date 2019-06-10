@@ -61,4 +61,15 @@
 
     </tbody>
 </table>
+@if (@Model.IsSaved)
+{
+    <a href="~/SavedRecipes/Remove/@Model.ID">Remove</a>
+}
+else
+{
+<a href="~/SavedRecipes/Save/@Model.ID"> Save</a>
+}
+@if(User.Identity.Name == Model.Author)
+{
 <a href="~/Recipes/Edit/@Model.ID">Edit</a>
+}
