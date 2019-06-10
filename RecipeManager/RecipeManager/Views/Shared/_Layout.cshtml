@@ -1,4 +1,6 @@
-﻿
+﻿@using RecipeManager.Models
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> signInManager
 @{
     ViewData["Title"] = "_Layout";
 }
@@ -13,9 +15,18 @@
         <h2>RecipeManager</h2>
         <nav>
             <ul>
-                <li><a>Link 1</a> </li>
-                <li><a>Link 2</a></li>h
-                <li><a>Link 3</a></li>
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <li><a href="~/Account/Logout">Logout</a></li>
+                    <li><a href="~/SavedRecipes/ViewAll">Saved Recipes</a></li>
+                }
+                else
+                {
+                    <li><a href="~/Account/Login">Login</a></li>
+                    <li><a href="~/Account/Register">Register</a></li>
+                }
+                <li><a href="~/Recipes/Add">Add Recipe</a> </li>
+                <li><a href="~/">All Recipes</a></li>
             </ul>
         </nav>
     </header>

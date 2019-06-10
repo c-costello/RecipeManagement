@@ -56,7 +56,7 @@ namespace RecipeManager.Controllers.Account
                 if (result.Succeeded)
                 {
                     await _SignInManager.PasswordSignInAsync(rvm.Username, rvm.Password, false, false);
-                    return RedirectToAction("Home", "Index");
+                    return RedirectToAction("Index", "Home");
 
                 }
                 return View();
