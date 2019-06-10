@@ -1,0 +1,17 @@
+﻿header {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    background-color: grey;
+    font-family: sans-serif;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row;
+    width: 75vw;
+}

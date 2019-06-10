@@ -1,0 +1,11 @@
+﻿h2 {
+    font-family: 'Homemade Apple', cursive;
+    padding-left: 5px;
+    font-size: 24px;
+}
+
+header a {
+    font-family: 'Homemade Apple', cursive;
+    padding-left: 5px;
+    text-decoration: none;
+}
