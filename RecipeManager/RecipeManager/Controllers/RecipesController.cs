@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RecipeManager.Models;
 using RecipeManager.Models.Interfaces;
@@ -50,9 +51,14 @@ namespace RecipeManager.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             Recipe recipe = await _Recipe.GetRecipeById(id);
-            recipe.Instructions = await _Instruction.GetInstructions(id);
-            recipe.Ingredients = await _Ingredient.GetIngredients(id);
-            return View(recipe);
+            String user = User.Identity.Name;
+            if (user == recipe.Author)
+            {
+                recipe.Instructions = await _Instruction.GetInstructions(id);
+                recipe.Ingredients = await _Ingredient.GetIngredients(id);
+                return View(recipe);
+            }
+            return RedirectToAction("Index", "Home");
         }
         [HttpPost]
         public async Task<IActionResult> Edit(Recipe recipe)
