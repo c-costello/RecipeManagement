@@ -1,5 +1,6 @@
 ﻿var ingCounter = parseInt($('.final-ing-count').text())-1;
-var instCounter = parseInt($('.final-inst-count').text())-1;
+var instCounter = parseInt($('.final-inst-count').text()) - 1;
+Console.WriteLine(ingCounter);
 $('.ingredient-adder').on('click', () => {
     ingCounter++;
     console.log(ingCounter);

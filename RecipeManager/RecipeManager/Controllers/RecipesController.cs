@@ -34,6 +34,7 @@ namespace RecipeManager.Controllers
             var instructions = recipe.Instructions;
             recipe.Instructions = null;
             recipe.Ingredients = null;
+            recipe.Author = User.Identity.Name;
             await _Recipe.CreateRecipe(recipe);
             foreach (var ingredient in ingredients)
             {
