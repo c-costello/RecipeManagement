@@ -6,6 +6,7 @@
     font-family: sans-serif;
     padding-top: 15px;
     padding-bottom: 15px;
+    height: 54px;
 }
 
 
@@ -15,3 +16,44 @@ nav ul{
     flex-flow: row;
     width: 75vw;
 }
+
+.small-screen{
+    display: none;
+}
+
+@media(max-width: 960px) {
+    body {
+        background-color: pink;
+    }
+    .small-screen {
+        display: inline-block;
+    }
+    nav ul {
+        position: absolute;
+        top: 84px;
+        left: 0px;
+        z-index: 99;
+        display: flex;
+        justify-content: space-around;
+        flex-flow: column;
+        width: 75vw;
+        padding-top: 10px;
+        background-color: grey;
+        width: 100vw;
+        padding-bottom: 10px;
+    }
+    nav ul li {
+        text-align: right;
+    }
+    .small-screen-hidden {
+        display: none;
+    }
+
+}
+
+@media(max-width: 480px) {
+    body {
+        background-color: blue;
+    }
+}
+

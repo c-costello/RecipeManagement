@@ -1,6 +1,5 @@
 ﻿var ingCounter = parseInt($('.final-ing-count').text())-1;
 var instCounter = parseInt($('.final-inst-count').text()) - 1;
-Console.WriteLine(ingCounter);
 $('.ingredient-adder').on('click', () => {
     ingCounter++;
     console.log(ingCounter);
@@ -12,6 +11,12 @@ $('.instruction-adder').on('click', () => {
     instCounter++;
     console.log(instCounter);
     $(`<tr>\n<td>\n <input type="text" id="Instructions_${instCounter}__StepNumber" name="Instructions[${instCounter}].StepNumber" value = "${instCounter + 1}" >\n</td>\n<td> \n <input type = "text" id = "Instructions_${instCounter}__Detail" name = "Instructions[${instCounter}].Detail" value = "" >\n</td>\n</tr>`).appendTo('.instructions')
+})
+
+$('.hamburger').on('click', () => {
+    console.log('click');
+    $('.hamburger').toggleClass('is-active');
+    $('nav').toggleClass('small-screen-hidden');
 })
 
    

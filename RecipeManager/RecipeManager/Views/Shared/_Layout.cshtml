@@ -10,13 +10,19 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Ubuntu&display=swap" rel="stylesheet">
     <link href="~/css/Reset.css" rel="stylesheet" />
+    <link href="~/css/hamburgers.css" rel="stylesheet">
     <link href="~/css/Layout.css" rel="stylesheet" />
     <link href="~/css/Font.css" rel="stylesheet" />
 </head>
 <body>
     <header>
         <h2>RecipeManager</h2>
-        <nav>
+        <button class="small-screen hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        <nav class="small-screen-hidden">
             <ul>
                 @if (signInManager.IsSignedIn(User))
                 {
