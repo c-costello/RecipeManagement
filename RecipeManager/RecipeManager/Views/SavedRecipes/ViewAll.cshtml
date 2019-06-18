@@ -7,14 +7,15 @@
 
 <h2>ViewAll</h2>
 <div class="recipe-container">
-    <div class="recipe-tile">
     @foreach (Recipe recipe in Model)
     {
+    <div class="recipe-tile">
         <p>@recipe.Title</p>
         <p>@recipe.Description</p>
+        <p>@recipe.Author</p>
         <a href="~/Recipes/Details/@recipe.ID">View Details</a>
         <a href="~/SavedRecipes/Remove/@recipe.ID"> Remove </a>
-    }
     </div>
+    }
 </div>
 
