@@ -13,6 +13,12 @@ nav ul {
     background-color: black;
 }
 
+.recipe-tile{
+    background-color: green;
+}
+
+
+
 @media(max-width: 960px) {
 }
 

@@ -7,12 +7,31 @@
     padding-bottom: 15px;
 }
 
+main {
+    padding-top: 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
 
 nav ul{
     display: flex;
     justify-content: space-around;
     flex-flow: row;
     width: 75vw;
+}
+
+.recipe-container {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.recipe-tile {
+    padding: 1vw;
+    width: 20vw;
+    min-width: 50px;
+
 }
 
 .small-screen{
