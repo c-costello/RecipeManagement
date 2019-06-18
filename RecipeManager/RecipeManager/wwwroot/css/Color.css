@@ -1,0 +1,26 @@
+﻿header {
+    background-color: black;
+    color: white;
+}
+nav ul li a {
+    color: white;
+}
+
+nav ul li a:hover {
+    color: lightgray;
+}
+nav ul {
+    background-color: black;
+}
+
+.recipe-tile{
+    background-color: green;
+}
+
+
+
+@media(max-width: 960px) {
+}
+
+
+

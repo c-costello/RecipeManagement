@@ -2,11 +2,15 @@
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    background-color: grey;
     font-family: sans-serif;
     padding-top: 15px;
     padding-bottom: 15px;
-    height: 54px;
+}
+
+main {
+    padding-top: 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 
@@ -15,6 +19,19 @@ nav ul{
     justify-content: space-around;
     flex-flow: row;
     width: 75vw;
+}
+
+.recipe-container {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.recipe-tile {
+    padding: 1vw;
+    width: 20vw;
+    min-width: 50px;
+
 }
 
 .small-screen{
@@ -26,9 +43,6 @@ nav ul{
         display: block;
         position: relative;
         height:28px; 
-    }
-    body {
-        background-color: pink;
     }
     .small-screen {
         display: inline-block;
@@ -48,7 +62,6 @@ nav ul{
         flex-flow: column;
         width: 75vw;
         padding-top: 10px;
-        background-color: grey;
         width: 100vw;
         padding-bottom: 10px;
     }
@@ -65,7 +78,6 @@ nav ul{
 
 @media(max-width: 480px) {
     body {
-        background-color: blue;
     }
 }
 

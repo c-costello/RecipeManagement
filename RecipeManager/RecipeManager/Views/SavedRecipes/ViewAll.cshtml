@@ -6,11 +6,16 @@
 }
 
 <h2>ViewAll</h2>
-@foreach (Recipe recipe in Model)
-{
-    <p>@recipe.Title</p>
-    <p>@recipe.Description</p>
-    <a href="~/Recipes/Details/@recipe.ID">View Details</a>
-    <a href="~/SavedRecipes/Remove/@recipe.ID"> Remove </a>
-}
+<div class="recipe-container">
+    @foreach (Recipe recipe in Model)
+    {
+    <div class="recipe-tile">
+        <p>@recipe.Title</p>
+        <p>@recipe.Description</p>
+        <p>@recipe.Author</p>
+        <a href="~/Recipes/Details/@recipe.ID">View Details</a>
+        <a href="~/SavedRecipes/Remove/@recipe.ID"> Remove </a>
+    </div>
+    }
+</div>
 

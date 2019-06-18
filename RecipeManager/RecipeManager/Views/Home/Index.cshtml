@@ -6,13 +6,15 @@
 }
 
 <h1>Recipes</h1>
-@foreach (Recipe recipe in @Model)
-{
-    <div>
-        <h4 class="title"> @recipe.Title </h4>
-        <p> @recipe.Description</p>
-        <p> @recipe.Author</p>
-        <a href="~/Recipes/Details/@recipe.ID">View Details</a>
-    </div>
-}
+<div class="recipe-container">
+    @foreach (Recipe recipe in @Model)
+    {
+        <div class="recipe-tile">
+            <h4 class="title"> @recipe.Title </h4>
+            <p> @recipe.Description</p>
+            <p> @recipe.Author</p>
+            <a href="~/Recipes/Details/@recipe.ID">View Details</a>
+        </div>
+    }
+</div>
 
