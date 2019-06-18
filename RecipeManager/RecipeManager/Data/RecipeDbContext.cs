@@ -227,8 +227,130 @@ namespace RecipeManager.Data
                     Notes = "Optional",
                     RecipeID = 5,
                     Quantity = "1 cup",
+                },
+                new Ingredient
+                {
+                    ID = 22,
+                    RecipeID = 1,
+                    Name = "Vegitable Oil",
+                    Quantity = "1/2 cup",
                 }
                 );
+            modelBuilder.Entity<Instruction>().HasData(
+                new Instruction
+                {
+                    StepNumber = 1,
+                    RecipeID = 1,
+                    Detail = "Preheat oven to 325 degrees",
+                },
+                new Instruction
+                {
+                    StepNumber = 2,
+                    RecipeID = 1,
+                    Detail = "Mix together Ranch, Lemon Pepper, Tony Chachere's, and Dill",
+                },
+                new Instruction
+                {
+                    StepNumber = 3,
+                    RecipeID = 1,
+                    Detail = "Pour crackers into 9 X 13 pan. Mix crackers and oil",
+                },
+                new Instruction
+                {
+                    StepNumber = 4,
+                    RecipeID = 1,
+                    Detail = "Add seasoning to oiled crackers. Mix well",
+                },
+                new Instruction
+                {
+                    StepNumber = 5,
+                    RecipeID = 1,
+                    Detail = "Bake for 15 minutes, stirring frequently. Let cool before eating",
+                },
+                new Instruction
+                {
+                    StepNumber = 1,
+                    RecipeID = 2,
+                    Detail = "Cook rice according to manufacturer instructions, or in a rice cooker. While rice is cooking, bake salted salmon at 350 degrees for 15 minutes or until done.",
+                },
+                new Instruction
+                {
+                    StepNumber = 2,
+                    RecipeID = 2,
+                    Detail = "When rice is done cooking, remove from pot and transfer onto a baking sheet. Fan with a peice of cardboard until rice is cool enough to touch. (But don't let it get cold.) While rice and fish are cooling, prepare a small bowl of salt and a bowl of water.",
+                },
+                new Instruction
+                {
+                    StepNumber = 3,
+                    RecipeID = 2,
+                    Detail = "Dip hands in water, then coat in salt. Pick up a handful of rice slightly larger than a golf ball. (Note: Size isn't super important. If you want a larger rice ball, add more rice). Gently press rice flat into your hand, making a slight indent in the center of the rice. Add your filling (salmon or umeboshi). Add a golf ball sized peice of rice on top of filling and pack into a triangle shape",
+                },
+                new Instruction
+                {
+                    StepNumber = 4,
+                    RecipeID = 2,
+                    Detail = "When ready to eat, wrap rice ball in seaweed and enjoy.",
+                },
+                new Instruction
+                {
+                    StepNumber = 1,
+                    RecipeID = 3,
+                    Detail = "Scoop IceCream into two bowls, three scoops each.",
+                },
+                new Instruction
+                {
+                    StepNumber = 2,
+                    RecipeID = 3,
+                    Detail = "Pour chocolate sauce over ice cream. Sprinkle on the sprinkles.",
+                },
+                new Instruction
+                {
+                    StepNumber = 3,
+                    RecipeID = 3,
+                    Detail = "Add a cherry on top and enjoy!",
+                },
+                new Instruction
+                {
+                    StepNumber = 1,
+                    RecipeID = 4,
+                    Detail = "In a large, thick bottomed pot, add butter and flour. Stir constantly over medium heat until flour becomes a dark golden brown. Add chopped onions. Cook until onions are tender.",
+                },
+                new Instruction
+                {
+                    StepNumber = 2,
+                    RecipeID = 4,
+                    Detail = "Once onions are cooked, add in 1/2 cup of chicken stock. Stir until there are no lumps. Gradually add the rest of the chicken stock. Bring to a boil and allow to cook until all flavors have mingled (20 minutes)",
+                },
+                new Instruction
+                {
+                    StepNumber = 3,
+                    RecipeID = 4,
+                    Detail = "Add chicken, and salt to taste. Serve over rice with Gumbo File",
+                },
+                new Instruction
+                {
+                    StepNumber = 1,
+                    RecipeID = 5,
+                    Detail = "Prehead oven to 350. In a small pan, add butter and thyme leaves. Remove from heat once butter is completely melted, and allow to cool slightly",
+                },
+                new Instruction
+                {
+                    StepNumber = 2,
+                    RecipeID = 5,
+                    Detail = "Once butter is cool enough to touch, carefully coat chicken in the thyme butter. If possible, get the butter under the skin as well. Reserve leftover butter.",
+                },
+                new Instruction
+                {
+                    StepNumber = 3,
+                    RecipeID = 5,
+                    Detail = "Pour wine into a 2 and a half to three inch wide glass jar. Place the glass jar in a deep lipped baking sheet or pirex baking dish. Carefully slide the chicken onto the glass jar."
+                },
+                new Instruction
+                {
+                    StepNumber = 4,
+                    RecipeID = 5,
+                    Detail = "Bake chicken for 30 minutes for each pound. Add more butter to chicken halfway through baking. Allow to rest before cutting."
+                });
 
         }
 
