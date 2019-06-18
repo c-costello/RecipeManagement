@@ -1,2 +1,16 @@
-﻿body {
+﻿header {
+    background-color: black;
+    color: white;
 }
+nav ul li a {
+    color: white;
+}
+nav ul {
+    background-color: black;
+}
+
+@media(max-width: 960px) {
+}
+
+
+
