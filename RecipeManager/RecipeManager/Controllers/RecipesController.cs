@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RecipeManager.Models;
 using RecipeManager.Models.Interfaces;
@@ -15,18 +16,24 @@ namespace RecipeManager.Controllers
         private readonly IInstruction _Instruction;
         private readonly IRecipe _Recipe;
         private readonly ISavedRecipe _SavedRecipe;
+        private readonly SignInManager<ApplicationUser> _SignInManager;
 
-        public RecipesController(IIngredient ingredient, IInstruction instruction, IRecipe recipe, ISavedRecipe savedRecipe)
+        public RecipesController(IIngredient ingredient, IInstruction instruction, IRecipe recipe, ISavedRecipe savedRecipe, SignInManager<ApplicationUser> signInManager)
         {
             _Ingredient = ingredient;
             _Instruction = instruction;
             _Recipe = recipe;
             _SavedRecipe = savedRecipe;
+            _SignInManager = signInManager;
         }
         [HttpGet]
         public IActionResult Add()
-        {
-            return View();
+        {   
+            if (_SignInManager.IsSignedIn(User))
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Account");
         }
         [HttpPost]
         public async Task<IActionResult> Add(Recipe recipe)
