@@ -65,17 +65,171 @@ namespace RecipeManager.Data
                     Notes = "Be wary of cook time. It can depend on the oven, or the size of the chicken.",
                     ServingSize = 4,
 
+                });
+            modelBuilder.Entity<Ingredient>().HasData(
+                new Ingredient
+                {
+                    ID = 1,
+                    Name = "Oyster Crackers",
+                    RecipeID = 1,
+                    Quantity = "Two bags or 2 lbs",
                 },
-                new Recipe
+                new Ingredient
+                {
+                    ID = 2,
+                    Name = "Tony Chachere's",
+                    Notes = "A louisianan seasoning",
+                    RecipeID = 1,
+                    Quantity = "1 tbsp",
+                },
+                new Ingredient
+                {
+                    ID = 3,
+                    Name = "Lemon Pepper",
+                    RecipeID = 1,
+                    Quantity = "1 tsp",
+                },
+                new Ingredient
+                {
+                    ID = 4,
+                    Name = "Dill",
+                    Notes = "dried works best",
+                    RecipeID = 1,
+                    Quantity = "3 tbsp",
+                },
+                new Ingredient
+                {
+                    ID = 5,
+                    Name = "Ranch Dressing Packet",
+                    Notes = "I like hidden valley",
+                    RecipeID = 1,
+                    Quantity = "1",
+                },
+                new Ingredient
                 {
                     ID = 6,
-                    Title = "Chicken and Biscuits",
-                    Author = "Clarice",
-                    Description = "An alternative to chicken pot pie",
-                    Notes = "Frozen veggies make things a lot easier.",
-                    ServingSize = 8,
+                    Name = "Uncooked Sushi Rice",
+                    RecipeID = 2,
+                    Quantity = "2 cups",
+                },
+                new Ingredient
+                {
+                    ID = 7,
+                    Name = "Salted Salmon",
+                    RecipeID = 2,
+                    Quantity = "4 oz",
+                },
+                new Ingredient
+                {
+                    ID = 8,
+                    Name = "Pickled Plums / Umeboshi",
+                    RecipeID = 2,
+                    Quantity = "2 - 3 depending on how much you like pickled plum"
+                },
+                new Ingredient
+                {
+                    ID = 9,
+                    Name = "Seaweed",
+                    RecipeID = 2,
+                    Quantity = "4 sheets, cut in half",
+                },
+                new Ingredient
+                {
+                    ID = 10,
+                    Name = "Your favorite Ice Cream",
+                    RecipeID = 3,
+                    Quantity = "1 pint or 6 scoops",
+                },
+                new Ingredient
+                {
+                    ID = 11,
+                    Name = "Chocolate Fudge Sauce",
+                    Notes = "Heated slightly",
+                    RecipeID = 3,
+                    Quantity = "1/2 cup",
+                },
+                new Ingredient
+                {
+                    ID = 12,
+                    Name = "Sprinkles",
+                    RecipeID = 3,
+                    Quantity = "To Taste",
+                },
+                new Ingredient
+                {
+                    ID = 13,
+                    Name = "Marichino Cherry",
+                    RecipeID = 3,
+                    Quantity = "2",
+                },
+                new Ingredient
+                {
+                    ID = 14,
+                    Name = "Whole, roasted, broken down chicken",
+                    RecipeID = 4,
+                    Quantity = "One",
+                },
+                new Ingredient
+                {
+                    ID = 15,
+                    Name = "Flour",
+                    RecipeID = 4,
+                    Quantity = "1/2 cup",
+                },
+                new Ingredient
+                {
+                    ID = 16,
+                    Name = "Oil or Butter, or other fat",
+                    Notes = "I prefer butter",
+                    RecipeID = 4,
+                    Quantity = "1/2 cup",
+                },
+                new Ingredient
+                {
+                    ID = 17,
+                    Name = "Onion",
+                    RecipeID = 4,
+                    Quantity = "1 large",
+                },
+                new Ingredient
+                {
+                    ID = 18,
+                    Name = "Chicken stock",
+                    Notes = "Home made is better",
+                    RecipeID = 4,
+                    Quantity = "6 qts",
+                },
+                new Ingredient
+                {
+                    ID = 19,
+                    Name = "Butter",
+                    RecipeID = 5,
+                    Quantity = "1/2 cup",
+                },
+                new Ingredient
+                {
+                    ID = 20,
+                    Name = "Fresh Thyme",
+                    RecipeID = 5,
+                    Quantity = "4-6 sprigs",
+                },
+                new Ingredient
+                {
+                    ID = 20,
+                    Name = "Whole, raw chicken",
+                    RecipeID = 5,
+                    Quantity = "One",
+                },
+                new Ingredient
+                {
+                    ID = 21,
+                    Name = "White Wine",
+                    Notes = "Optional",
+                    RecipeID = 5,
+                    Quantity = "1 cup",
+                }
+                );
 
-                });
         }
 
 
