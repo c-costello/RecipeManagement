@@ -23,15 +23,15 @@ nav ul{
 
 .recipe-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-flow: row wrap;
 }
 
 .recipe-tile {
     padding: 1vw;
-    width: 20vw;
-    min-width: 50px;
-
+    width: 15vw;
+    min-width: 100px;
+    margin: 10px;
 }
 
 .small-screen{
