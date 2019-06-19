@@ -9,3 +9,17 @@ header a {
     padding-left: 5px;
     text-decoration: none;
 }
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.recipe-tile p, .recipe-tile h4, .recipe-tile a{
+    margin-bottom: 5px;
+}
+.author {
+    font-style: italic;
+}
