@@ -15,11 +15,11 @@ Recipe Management is, as the name suggests, a tool for managing recipes. Upon cr
 ```
 - Replace <Recipe Database Name> with the your desired database name. Replace <User Database Name> with your desire User Database Name
 - Open Package Manager Console. Run the following commands
--- Add-Migration -context ApplicationDbContext userSetUp
--- Add-Migration -context RecipeDbContext recipeSetUp
--- Update-Database -context ApplicationDbContext
--- Update-Database -context RecipeDbContext
-- Hit Run.
+  - Add-Migration -context ApplicationDbContext userSetUp
+  - Add-Migration -context RecipeDbContext recipeSetUp
+  - Update-Database -context ApplicationDbContext
+  - Update-Database -context RecipeDbContext
+- Run application. 
 
 ## Tools and Technologies
 ### Languages
