@@ -5,16 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ViewAll</h2>
+<h1>ViewAll</h1>
 <div class="recipe-container">
     @foreach (Recipe recipe in Model)
     {
     <div class="recipe-tile">
-        <p>@recipe.Title</p>
-        <p>@recipe.Description</p>
-        <p>@recipe.Author</p>
-        <a href="~/Recipes/Details/@recipe.ID">View Details</a>
-        <a href="~/SavedRecipes/Remove/@recipe.ID"> Remove </a>
+        <p class="title">@recipe.Title</p>
+        <p class="description">@recipe.Description</p>
+        <p class="author">@recipe.Author</p>
+        <div class="recipe-link-holder">
+            <a href="~/Recipes/Details/@recipe.ID">View Details</a>
+            <a href="~/SavedRecipes/Remove/@recipe.ID"> Remove </a>
+        </div>
     </div>
     }
 </div>
