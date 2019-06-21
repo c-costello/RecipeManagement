@@ -1,4 +1,8 @@
-﻿header {
+﻿body {
+   background-color: #dee9eb
+}
+
+header {
     background-color: black;
     color: white;
 }
@@ -7,14 +11,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: lightgray;
+    color: #3db3db;
 }
 nav ul {
     background-color: black;
 }
 
-.recipe-tile{
-    background-color: green;
+.recipe-tile {
+    background-color: #3db3db;
 }
 
 
