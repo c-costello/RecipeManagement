@@ -138,6 +138,7 @@ table{
     margin-right: auto;
     margin-top: 5px;
     margin-bottom: 5px;
+    border-radius: 5px;
 }
 
 .ingredient-adder:hover, .instruction-adder:hover, .recipe-link-holder a:hover, .fake-button:hover {
