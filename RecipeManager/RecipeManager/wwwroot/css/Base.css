@@ -95,7 +95,32 @@ nav ul li:hover{
 .instruction-cell {
     margin-bottom: 5px;
 }
+h5 {
+    font-size: 24px;
+}
 
+.recipe-form{
+    display: flex;
+    flex-flow: column;
+}
+
+.recipe-form-input{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table{
+    margin-right: auto;
+    margin-left: auto;
+}
+.instruction-holder{
+    margin-left: initial;
+    margin-right: initial;
+}
 @media screen and (min-width: 960px){
     nav{
         padding: 0px;
