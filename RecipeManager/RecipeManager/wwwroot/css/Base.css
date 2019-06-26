@@ -128,7 +128,7 @@ table{
     margin-right: initial;
 }
 
-.ingredient-adder, .instruction-adder, .recipe-link-holder a {
+.ingredient-adder, .instruction-adder, .recipe-link-holder a, .fake-button {
     background-color: #ff9292;
     color: white;
     width: 20vw;
@@ -140,8 +140,12 @@ table{
     margin-bottom: 5px;
 }
 
-.ingredient-adder:hover, .instruction-adder:hover, .recipe-link-holder a:hover {
+.ingredient-adder:hover, .instruction-adder:hover, .recipe-link-holder a:hover, .fake-button:hover {
     background-color: #ff4141;
+}
+.fake-button{
+    display: inline-block;
+    margin-top: 20px;
 }
 
 .recipe-link-holder {
