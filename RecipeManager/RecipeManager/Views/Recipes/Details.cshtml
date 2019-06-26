@@ -5,44 +5,41 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
-
-<p><span> Title: </span>@Model.Title</p>
-<p><span> Serving Size: </span>@Model.ServingSize</p>
-<p><span> Cook Time: </span>@Model.CookTime</p>
-<p><span> Description: </span>@Model.Description</p>
-<p><span> Notes: </span>@Model.Notes</p>
-<table class="ingr-table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Notes</th>
-        </tr>
-    </thead>
-    <tbody class="ingredients">
+<h1>@Model.Title</h1>
+<div class="recipe-details">
+    <p><span> Serving Size: </span>@Model.ServingSize</p>
+    <p><span> Cook Time: </span>@Model.CookTime</p>
+    <p><span> Description: </span>@Model.Description</p>
+    <p><span> Notes: </span>@Model.Notes</p>
+</div>
+<h5>Ingredients</h5>
+<div class="ingredient-holder">
         @for (int i = 0; i < Model.Ingredients.Count(); i++)
         {
-            <tr>
-                <td>
+            <div class="ingredient-tile">         
+                <span class="quantity-cell">
+                    @Model.Ingredients[i].Quantity :
+                </span>
+                <span class="name-cell">
                     @Model.Ingredients[i].Name
-                </td>
-                <td>
-                    @Model.Ingredients[i].Quantity
-                </td>
-                <td>
-                    @Model.Ingredients[i].Notes
-                </td>
-            </tr>
+                </span>
+                @if(Model.Ingredients[i].Notes != null)
+                {
+                    <span>Notes:</span>
+                    <span class="notes-cell">
+                        @Model.Ingredients[i].Notes
+                    </span>
+                }
+            </div>
         }
-    </tbody>
-</table>
+</div>
 
-<table>
+<h5> Instructions</h5>
+<table class="instruction-holder">
     <thead>
         <tr>
-            <th> Step Number</th>
-            <th> Instruction</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody class="instructions">
@@ -50,10 +47,10 @@
         @for (int i = 0; i < Model.Instructions.Count(); i++)
         {
             <tr>
-                <td>
+                <td class="step-cell">
                     @Model.Instructions[i].StepNumber
                 </td>
-                <td>
+                <td class="instruction-cell">
                     @Model.Instructions[i].Detail
                 </td>
             </tr>
@@ -63,13 +60,13 @@
 </table>
 @if (@Model.IsSaved)
 {
-    <a href="~/SavedRecipes/Remove/@Model.ID">Remove</a>
+    <a class="fake-button" href="~/SavedRecipes/Remove/@Model.ID">Remove</a>
 }
 else
 {
-<a href="~/SavedRecipes/Save/@Model.ID"> Save</a>
+<a class="fake-button" href="~/SavedRecipes/Save/@Model.ID"> Save</a>
 }
 @if(User.Identity.Name == Model.Author)
 {
-<a href="~/Recipes/Edit/@Model.ID">Edit</a>
+<a class="fake-button" href="~/Recipes/Edit/@Model.ID">Edit</a>
 }

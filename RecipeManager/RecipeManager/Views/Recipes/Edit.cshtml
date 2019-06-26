@@ -9,16 +9,27 @@
 <span class="hidden final-inst-count">@Model.Instructions.Count()</span>
 <span class="hidden final-ing-count">@Model.Instructions.Count()</span>
 <form method="post">
-    <label asp-for="@Model.Title"></label>
-    <input asp-for="@Model.Title" />
-    <label asp-for="@Model.ServingSize"></label>
-    <input asp-for="@Model.ServingSize" />
-    <label asp-for="@Model.CookTime"></label>
-    <input asp-for="@Model.CookTime" />
-    <label asp-for="@Model.Description"></label>
-    <input asp-for="@Model.Description" />
-    <label asp-for="@Model.Notes"></label>
-    <input asp-for="@Model.Notes" />
+
+    <div class="recipe-form-input">
+        <label asp-for="@Model.Title"></label>
+        <input asp-for="@Model.Title" />
+    </div>
+    <div class="recipe-form-input">
+        <label asp-for="@Model.ServingSize"></label>
+        <input asp-for="@Model.ServingSize" />
+    </div>
+    <div class="recipe-form-input">
+        <label asp-for="@Model.CookTime"></label>
+        <input asp-for="@Model.CookTime" />
+    </div>
+    <div class="recipe-form-input">
+        <label asp-for="@Model.Description"></label>
+        <input asp-for="@Model.Description" />
+    </div>
+    <div class="recipe-form-input">
+        <label asp-for="@Model.Notes"></label>
+        <input asp-for="@Model.Notes" />
+    </div>
     <table class="ingr-table">
         <thead>
             <tr>
@@ -44,7 +55,7 @@
             }
         </tbody>
     </table>
-    <p class="ingredient-adder">Plus Plus</p>
+    <p class="ingredient-adder">+Ingredient</p>
     <table>
         <thead>
             <tr>
@@ -53,22 +64,22 @@
             </tr>
         </thead>
         <tbody class="instructions">
-            
-                @for(int i = 0; i < Model.Instructions.Count(); i++)
-                {
-                    <tr>
-                        <td>
-                            <input type="number" asp-for="@Model.Instructions[i].StepNumber" value="@Model.Instructions[i].StepNumber" />
-                        </td>
-                        <td>
-                            <input asp-for="@Model.Instructions[i].Detail" />
-                        </td>
-                    </tr>
-                }
+
+            @for (int i = 0; i < Model.Instructions.Count(); i++)
+            {
+                <tr>
+                    <td>
+                        <input type="number" asp-for="@Model.Instructions[i].StepNumber" value="@Model.Instructions[i].StepNumber" />
+                    </td>
+                    <td>
+                        <input asp-for="@Model.Instructions[i].Detail" />
+                    </td>
+                </tr>
+            }
 
         </tbody>
     </table>
-    <p class="instruction-adder">Plus Plus</p>
+    <p class="instruction-adder">+Instruction</p>
     <button type="submit">Submit</button>
 </form>
 
