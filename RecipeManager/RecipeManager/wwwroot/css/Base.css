@@ -1,0 +1,10 @@
+﻿body {
+    background-image: url(../../resources/tomatoes2.jfif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+main {
+}
