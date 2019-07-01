@@ -70,7 +70,7 @@ namespace RecipeManager.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> Edit(Recipe recipe)
         {
             var ingredients = recipe.Ingredients;
@@ -118,5 +118,20 @@ namespace RecipeManager.Controllers
             }
             return View(recipe);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            Recipe recipe = await _Recipe.GetRecipeById(id);
+            return View(recipe);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> ConfirmDelete(int id)
+        {
+            await _Recipe.DeleteRecipeById(id);
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }
