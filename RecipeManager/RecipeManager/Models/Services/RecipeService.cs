@@ -26,6 +26,13 @@ namespace RecipeManager.Models.Services
         public async Task DeleteRecipeById(int id)
         {
             Recipe recipe = await GetRecipeById(id);
+            List<SavedRecipe> savedRaw = await _context.SavedRecipes.ToListAsync();
+            List<SavedRecipe> saved = savedRaw.FindAll(s => s.RecipeID == id);
+            foreach (var savedRecipe in saved)
+            {
+                _context.SavedRecipes.Remove(savedRecipe);
+                await _context.SaveChangesAsync();
+            }            
             _context.Recipes.Remove(recipe);
             await _context.SaveChangesAsync();
 
