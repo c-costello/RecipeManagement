@@ -86,5 +86,11 @@ namespace RecipeManager.Controllers.Account
             }
             return View();
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _SignInManager.SignOutAsync();
+            return RedirectToAction("Index","Home");
+        }
     }
 }

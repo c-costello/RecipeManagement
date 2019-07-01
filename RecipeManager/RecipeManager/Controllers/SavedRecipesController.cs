@@ -42,8 +42,15 @@ namespace RecipeManager.Controllers
             await _Context.CreateSavedRecipes(id, user);
             return RedirectToAction("ViewAll");
         }
+
         [HttpGet]
         public async Task<IActionResult> Remove(int id)
+        {
+            Recipe recipe = await _RecipeContext.GetRecipeById(id);
+            return View(recipe);
+        }
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> Delete(int id)
         {
             string user = User.Identity.Name;
             await _Context.DeleteRecipe(id, user);
