@@ -70,7 +70,7 @@ namespace RecipeManager.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
-        [HttpPut]
+        [HttpPost, ActionName("Edit")]
         public async Task<IActionResult> Edit(Recipe recipe)
         {
             var ingredients = recipe.Ingredients;

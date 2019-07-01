@@ -8,7 +8,7 @@
 <h1>Edit</h1>
 <span class="hidden final-inst-count">@Model.Instructions.Count()</span>
 <span class="hidden final-ing-count">@Model.Instructions.Count()</span>
-<form method="post">
+<form asp-action="Edit">
 
     <div class="recipe-form-input">
         <label asp-for="@Model.Title"></label>
